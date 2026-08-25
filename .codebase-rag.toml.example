@@ -1,0 +1,30 @@
+# codebase-rag-2.0 Project Configuration Example (.codebase-rag.toml)
+
+[embedding]
+# Options: "gemini", "openai", "voyage", "ollama", "none"
+provider = "gemini"
+model = "text-embedding-004"
+batch_size = 32
+
+[retrieval]
+top_k = 10
+bm25_weight = 1.0
+vector_weight = 1.0
+symbol_weight = 1.5
+rrf_k = 60
+max_context_tokens = 8000
+
+[index]
+max_file_size_bytes = 1048576 # 1 MB
+chunk_target_lines = 60
+chunk_overlap_lines = 10
+ignore_patterns = [
+    "**/.git/**",
+    "**/target/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.venv/**",
+    "**/__pycache__/**",
+    "**/.codebase-rag/**",
+]
